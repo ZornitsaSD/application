@@ -53,7 +53,8 @@ class Login extends CI_Controller{
 	public function index()//insert_user()
 	{
 
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
  
  		if($this->form_validation->run() === FALSE)
  		{
@@ -63,9 +64,8 @@ class Login extends CI_Controller{
  		{
  			$this->users_model->add_user();
 
- 			echo "<p>".anchor('login/index', 'Login')."</p>";
+ 			echo "<p>".anchor('login/log_in', 'Login')."</p>";
 		}
 	}
 
 }
-?>

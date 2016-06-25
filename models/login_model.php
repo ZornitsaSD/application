@@ -12,7 +12,7 @@ class Login_model extends CI_Model{
 
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		//$password = md5($password);
+		$password = md5($password);
 		
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
@@ -26,13 +26,13 @@ class Login_model extends CI_Model{
 					'gamer_id' => $row->gamer_id,
 					'username' => $row->username,
 					'password' => $row->password,
-					'validated' => true
+					'validated' => TRUE
 					);
 			$this->session->set_userdata($data);
-			return true;
+			return TRUE;
 		}
 		
-		return false;
+		return FALSE;
 	}
 }
 ?>

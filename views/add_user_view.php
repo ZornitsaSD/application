@@ -4,7 +4,7 @@
 echo validation_errors();
 
 echo "<h1> Register your username and password</h1>";
-echo form_open('login/log_in');
+echo form_open('login/index');
 
 echo"<p>Enter username</p>";
 echo form_input('username');
