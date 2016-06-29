@@ -10,7 +10,7 @@ echo"<p>Enter username</p>";
 echo form_input('username');
 
 echo"<p>Enter passowrd</p>";
-echo form_input('password');
+echo form_password('password');
 
 echo form_submit('submit', 'Save');
 

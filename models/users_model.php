@@ -2,7 +2,7 @@
 
 class Users_model extends CI_Model{
 
-	public function get_all_users()
+	/*public function get_all_users()
 	{
 
 		$q = $this->db->get('users');
@@ -10,7 +10,7 @@ class Users_model extends CI_Model{
 		return $q->result_array();
 
 
-	}
+	}*/
 
 	public function add_user()
 	{
