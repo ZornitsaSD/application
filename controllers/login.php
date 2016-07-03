@@ -15,7 +15,12 @@ class Login extends CI_Controller{
 	//Insert
 	public function show_add_user(){
 
-		$this->load->view('add_user_view');
+		//$this->load->view('add_user_view');
+
+		$data['dynamic_view'] = 'add_user_view';
+       	$data['title'] = 'User view';
+
+        $this->load->view('templates/main_template', $data);
 
 	}
 
@@ -40,7 +45,13 @@ class Login extends CI_Controller{
 //Login	
 	public function log_in($param = NULL){
 		$data['param'] = $param;
-		$this->load->view('login_view', $data);
+		//$this->load->view('login_view', $data);
+
+		$data['dynamic_view'] = 'login_view';
+       	$data['title'] = 'Login';
+
+        $this->load->view('templates/main_template', $data);
+
 	}
 
 	public function procedure(){

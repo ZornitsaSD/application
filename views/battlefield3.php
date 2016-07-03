@@ -15,7 +15,8 @@
 			<span class="btn1"> Потребителско име: <?php $username = $this->session->userdata('username'); echo $username;?><!--<input type="text" name="<?php $username ?>"/>--></span>			
 			<span class="btn1" id="aimSuccess" >Точни изтрели: 0</span>
 			<span class="btn1" id="clicks">Налични снаряди: 20</span>
-			<span class="btn1"> <?php echo '<a href='.base_url().'index.php/home/do_logout'.'>Logout</a>'; ?></span>			
+			<span class="btn1"> <?php echo '<a href='.base_url().'index.php/home/do_logout'.'>Logout</a>'; ?></span>		
+			<!--<span class="btn1" id="aimSuccess"><?php //echo anchor('results/insert_result', 'Logout'); Taka shte dobavim res v DB i sled tova shte se logout?></span>-->
 		</div>	
 	<?php 
 		$clicks = '';
@@ -27,6 +28,8 @@
 		echo "<img src='".base_url()."/assets/images/background.png' class='stretch' />";
 
 			//$username ='Tosheto';
+			$username = $this->session->userdata('username');
+
 			$x = array(rand(100, 400), rand(100, 400), rand(100, 400), rand(100, 400), rand(100, 400), rand(100, 400),rand(100, 400), rand(100, 400)); 
 			$y = array(rand(0, 1000), rand(0, 900), rand(0, 0), rand(0, 900), rand(0, 900), rand(0, 900), rand(0, 900), rand(0, 900), rand(0, 900));					
 				echo '<div id="warrior0"  style="top: '. $x[0] .'"; left: '. $y[0] .'; "><img src="'.base_url().'/assets/images/warriorSmall.png" /></div>';
@@ -186,24 +189,32 @@
 	console.log  (aimSuccess);
 	console.log  (clicks);
 	var res = aimSuccess*5+clicks*2;
-	window.location.href = "battlefield3.php?res=" + res; 
-	alert ("Твоят резултат е  "+res + " точки"); 
+	window.location.href = "home?res=" + res; 
+	alert ("Твоят резултат е  "+res + " точки");
+
+	
 	}
 }
-	</script>	
-
+	</script>
 	<?php  
-		/*$res = $_GET['res'];
+		$date = date('Y-m-d');
+
+		$res = $_GET['res'];
+		//$username = $_GET[$this->session->userdata('username')];
+		//$id = $_GET[$this->session->userdata('gamer_id')];
+		$id = $_GET['gamer_id'];
+		
 		echo $res ;
 		$conn = mysqli_connect('localhost', 'root', '', 'game');
-		$insert_query = 	"INSERT INTO results (score) 
-							VALUES ('$res')";
+		$insert_query = 	"INSERT INTO results ('score', 'date') 
+							VALUES ($res, $date) WHERE 'gamer_id' = ".$id."";
 		$insert_result= mysqli_query($conn, $insert_query);
 				if ($insert_result) {
 					echo "OK";
+
 				}else{
 					echo "Not OK";
-				}*/
+				}
 	?>	
 	</body>
 </html>
