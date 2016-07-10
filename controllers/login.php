@@ -26,6 +26,8 @@ class Login extends CI_Controller{
 
 	public function index()//insert_user()
 	{
+		
+        $this->load->view('templates/header');
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -38,7 +40,7 @@ class Login extends CI_Controller{
  		{
  			$this->users_model->add_user();
 
- 			echo "<p>".anchor('login/log_in', 'Login')."</p>";
+ 			echo "<p id='entrance'>".anchor('login/log_in', 'Вход')."</p>";
 		}
 	}
 
@@ -59,7 +61,7 @@ class Login extends CI_Controller{
 		$result = $this->login_model->validate();
 		
 		if(! $result){
-			$param = '<font color=red>Invalid username and/or password.</font><br />';
+			$param = '<font color=white>Грешно потребителско име и/или парола.</font><br />';
 			$this->log_in($param);
 		}else{
 			

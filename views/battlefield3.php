@@ -1,3 +1,4 @@
+
 <DOCTYPE html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -15,7 +16,7 @@
 			<span class="btn1"> Потребителско име: <?php $username = $this->session->userdata('username'); echo $username;?><!--<input type="text" name="<?php $username ?>"/>--></span>			
 			<span class="btn1" id="aimSuccess" >Точни изтрели: 0</span>
 			<span class="btn1" id="clicks">Налични снаряди: 20</span>
-			<span class="btn1"> <?php echo '<a href='.base_url().'index.php/home/do_logout'.'>Logout</a>'; ?></span>		
+			<span class="btn1"> <?php echo '<a href='.base_url().'index.php/home/do-logout'.'>Изход</a>'; ?></span>		
 			<!--<span class="btn1" id="aimSuccess"><?php //echo anchor('results/insert_result', 'Logout'); Taka shte dobavim res v DB i sled tova shte se logout?></span>-->
 		</div>	
 	<?php 

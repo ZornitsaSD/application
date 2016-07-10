@@ -7,18 +7,18 @@
 <body>
 	<div id='login_form'>
 		<form action='<?php echo base_url();?>index.php/login/procedure' method='post' name='procedure'>
-			<h2>Login</h2>
+			<h1>Въведи потребителско име и парола:</h1>
 			
 			<?php if(! is_null($param)) echo $param;?>	
 			<p>		
-			<label for='username'>Username</label>
+			<label for='username'>Потребител</label><br>
 			<input type='text' name='username' id='username'>
 			</p>
 			<p>
-			<label for='password'>Password</label>
+			<label for='password'>Парола</label><br>
 			<input type='password' name='password' id='password'>							
 			</p>
-			<input type='Submit' value='Login' />			
+			<p id='sub'><input type='Submit' value='Вход' /></p>			
 		</form>
 	</div>
 </body>
