@@ -10,11 +10,20 @@ class Results extends CI_Controller{
 		$this->load->model('users_model');
 	}
 	
-	function insert_result(){
+	public function show_gamer_result(){
+		$gamer_id = $this->session->userdata('gamer_id');
+		$data['res'] = $this->results_model->get_results($gamer_id);
 
-	$this->results_model->ad_result();
+		$data['dynamic_view'] = 'results_view';
+        $data['title'] = 'Results';
 
-	$this->home->do_logout();
+        $this->load->view('templates/main_template', $data);
+
+		//$this->load->view('books/all_books_view', $data);
 	}
+	 public function show_results_view(){
+
+	 	$this->load->view('results_view');
+	 }
 }
 

@@ -69,21 +69,5 @@ class Login extends CI_Controller{
 		}		
 	}
 
-//Read
-/*	public function show_all_users()
-	{
-       $this->benchmark->mark('start');
-	   $this->load->model('users_model');
-        
-		$data['all_users'] = $this->users_model->get_all_users();
-
-		$this->load->view('show_all_users_view', $data);
-
-        
-       $this->benchmark->mark('end');
-
-	}*/
-
-
 	
 }
