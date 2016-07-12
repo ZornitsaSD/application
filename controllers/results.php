@@ -34,8 +34,8 @@ class Results extends CI_Controller{
 
 	//delete
  	 public function del_result(){
-        $result = $_GET['result_id'];
-    	 $this->results_model->delete_result($result);
+        $result_id = $_GET['result_id'];
+    	 $this->results_model->delete_result($result_id);
           //echo "Successfully deleted a result from DB!";
 
           //$this->load->view('view_results');

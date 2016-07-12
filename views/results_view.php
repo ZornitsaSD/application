@@ -24,7 +24,7 @@ foreach($res as $key => $value){
 	echo $value['score'];
 	echo "</td>";
 	//echo "<td>".anchor('Results/del-result/?result_id='.$value['result_id'], 'Изтрии')."</td>";
-	echo "<td>".anchor('Results/del-result/?result_id='.$value['result_id'], 'Изтрии')."</td>";
+	echo "<td>".anchor('Results/del-result/?result_id='.$value['result_id'], 'Изтрий')."</td>";
 	echo "</tr>";
 }
 echo "</table>";

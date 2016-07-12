@@ -27,7 +27,7 @@ class Results_model extends CI_Model{
 		$gamer_id = $this->session->userdata('res');
 		$res = array(
 			'score' => $this->input->post('res'),
-			'date' => $this->input->post($date),
+			'recored_date' => $this->input->post($date),
 			'gamer_id' => $this->input->post($gamer_id)  
 			);
 
@@ -37,13 +37,13 @@ class Results_model extends CI_Model{
 
 	//delete
 	
-	public function get_delete_result($result_id){
+	/*public function get_delete_result($result_id){
 
 		$this->db->select('*');
 		$this->db->from('results');
 		$q = $this->db->get();
 		return $result = $q->result();
-	}
+	}*/
 
 	public function delete_result($result_id){ 
 		

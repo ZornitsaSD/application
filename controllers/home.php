@@ -17,8 +17,8 @@
 		$this->load->view('battlefield3');	
 	}
 	
-	/* TOSHKO 
-	public function add_res(){
+	//insert
+	/*public function add_res(){
 		
 		//echo 'Congratulations, you are logged in.';
 		//$username = $this->session->userdata('username');
