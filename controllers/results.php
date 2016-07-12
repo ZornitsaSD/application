@@ -19,11 +19,27 @@ class Results extends CI_Controller{
 
         $this->load->view('templates/main_template', $data);
 
-		//$this->load->view('books/all_books_view', $data);
+		
 	}
-	 public function show_results_view(){
 
-	 	$this->load->view('results_view');
-	 }
+//insert
+	/*function insert_result($res){
+	 $res = $_GET['res'];
+
+	$this->results_model->ad_result();
+
+	//$this->home->do_logout();
+	}*/
+
+
+	//delete
+ 	 public function del_result(){
+        $result = $_GET['result_id'];
+    	 $this->results_model->delete_result($result);
+          //echo "Successfully deleted a result from DB!";
+
+          //$this->load->view('view_results');
+          $this->show_gamer_result();
+    }
 }
 
